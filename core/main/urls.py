@@ -10,6 +10,7 @@ urlpatterns = [
     path('blog_details/', views.blog_details, name='blog_details'),
     path('login/', views.login, name='login'),
     path('register/', views.register, name='register'),
+    path('pushupdate/', views.pushupdate, name='pushupdate'),
     # path('profile/', views.profile, name='profile'),
     # path('calculator/', views.calculator, name='calculator'),
     # Add other paths for your app views
