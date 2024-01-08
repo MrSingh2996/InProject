@@ -1,4 +1,18 @@
 from django.shortcuts import render
+from django.http import JsonResponse
+from django.views.decorators.csrf import csrf_exempt
+import subprocess
+
+@csrf_exempt
+def pushupdate(request):
+    if request.method == 'POST':
+        # Change to your project directory
+        project_directory = '/home/mrsingh29/InProject/core'
+        subprocess.run(['git', '-C', project_directory, 'pull'])
+        return JsonResponse({'message': 'Webhook received and project updated successfully'})
+    else:
+        return JsonResponse({'message': 'Pulled'}, status=400)
+    
 
 # Create your views here.
 
